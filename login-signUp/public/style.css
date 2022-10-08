@@ -1,0 +1,53 @@
+html, body {
+    width: 100%;
+    height:100%;
+  }
+  
+  body {
+      background: linear-gradient(-45deg, #b6654d, #e76194, #c069cc, #4cbea3);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+  }
+  
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
+
+  #confirm {
+    display: none;
+    background-color: #F3F5F6;
+    color: #000000;
+    border: 1px solid #aaa;
+    position: fixed;
+    width: 270px;
+    height: 100px;
+    left: 40%;
+    top:40%;
+    margin-left: -100px;
+    padding: 10px 20px 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+    #confirm button {
+        background-color: #FFFFFF;
+        display: inline-block;
+        border-radius: 12px;
+        border: 4px solid #aaa;
+        padding: 5px;
+        text-align: center;
+        width: 60px;
+        cursor: pointer;
+    }
+
+    #confirm .message {
+        text-align: left;
+    }

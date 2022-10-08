@@ -1,0 +1,51 @@
+<%-include('header')-%>
+
+  <div class="container">
+    <table id="table_id" class="display">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Options</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% dbUser.forEach((element,i)=>{%>
+          <tr>
+            <td>
+              <%= i+1%>
+            </td>
+            <td>
+              <%= element.name%>
+            </td>
+            <td>
+              <%= element.email%>
+            </td>
+            <td><a href="/admin/edit-user/<%=element._id%>" class="btn btn-info">Edit</a></td>
+            <td><a href="/admin/delete-user/<%=element._id%>" class="btn btn-danger" id="sweet"
+                onclick="return confirm('Are you sure to delete <%=element.name%>')">Delete</a></td>
+          </tr>
+          <%})%>
+      </tbody>
+    </table>
+    <a href="/login-user" class="btn btn-info btn-lg mb-3">Add user</a>
+
+    <a href="/logout" class="btn btn-warning btn-lg mb-3 float-end">Logout</a>
+  </div>
+
+
+  <html>
+
+    <script>
+      $(function () {
+        $("#table_id").dataTable();
+      });
+    </script>
+  </body>
+
+  </html>
+
+
+  <%-include('footer')-%>
